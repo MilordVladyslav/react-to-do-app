@@ -1,0 +1,55 @@
+State:
+  ActiveCategory
+  items: [
+    item {
+      text  
+      id
+    }
+  ]
+  ItemForm
+
+
+  const item = this.props.items.map((timer) => (
+    <Item id = {item.id}
+    />
+  ));
+  
+
+import React from 'react';
+import Item from './Item';
+
+class ItemList extends React.Component {
+  checkStatus = (value) => {
+    if(value.status === this.props.activeCategory) {
+      return <Item key = {value.id} text = {value.text}/>
+    }
+  }
+  render() {
+    const item = this.props.items.map(this.checkStatus());
+    return (
+      <div className="item-list">
+      {item}
+      </div>
+    ) 
+  }
+}
+
+export default ItemList;
+
+
+componentDidMount() {
+  console.log('Did mount') 
+} 
+
+componentWillUnmount - перед тем, как удалить элемент
+
+
+mounting
+updates
+unmounting
+error
+
+Сделал скрин с описанием разных life cycle
+
+дидмоунт
+  проводить запросы к апи для получения данных
